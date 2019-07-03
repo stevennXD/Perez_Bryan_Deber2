@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Polichat</title>
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./estilos.css">
+
+    <!-- área de código Firebase y lectura de Mensajes-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+                <h1 class="titulo">POLICHAT <img src="./poli.png"></h1>
+
+                <div class="panel panel-primary">
+
+                    <div class="panel-heading" style="background-color: black">
+                        Chat
+                    </div>
+
+                    <!--Se crea una lista no ordenada <ul> la cual sera la encargada de almacenar 
+                        y mostrar los mensajes que obtengamos de Firebase-->
+                    <div class="panel-body">
+                        <ul class="chat"> </ul>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div class="input-group">
+                            <input id="Mensaje" type="text" class="form-control input-sm"
+                                placeholder="Escribe tu mensaje" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-warning btn-sm" id="btnEnviar">
+                                    Enviar</button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Se añaden los elementos a la lista previamente creada con <li>, donde se mostraran el contenido de
+        los mensajes almacenados en Firebase, ademas de que se utiliza el atributo style con "display:none"
+        para que no se meustren los valores predeterminados de cada etiqueta como el texto "Prueba" y "Mensaje"-->
+    <li style="display:none" id="plantilla" class="left clearfix">
+        <!--En la etiqueta <span> mostraremos una pequeña imagen que representa al usuario del mensaje y se utiliza
+            la clase de bootstrap pull-left para hacer que se posicione totalmente a la izquierda del contenedor-->
+        <span class="chat-img pull-left">
+            <img src="./pika.png" />
+        </span>
+        <div class="chat-body clearfix">
+            <!--Se crean las etiquetas que mostraran cada elemento del mensaje como el nombre, tiempo y el contenido
+            del mensaje en caso del tiempo de igual manera se hace uso de la clase de bootstrap pull-right para que
+            en este caso posicionarlo totalmente a la derecha del contenedor-->
+            <div class="header">
+                <strong class="Nombre">Prueba</strong>
+                <small class="pull-right text-muted">
+                    <span class="Tiempo"></span>
+                </small>
+            </div>
+            <p class="Mensaje">
+                Mensaje
+            </p>
+        </div>
+    </li>
+
+
+
+    <!-- Scripts jQuery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+        integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+        crossorigin="anonymous"></script>
+
+    <script src="./chat.js"></script>
+</body>
+
+</html>

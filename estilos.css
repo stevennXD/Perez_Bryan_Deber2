@@ -1,0 +1,58 @@
+body{
+    background-color: lightskyblue;
+}
+
+.titulo{
+    text-align: center;
+    color: blue;
+}
+
+#btnEnviar{
+    background-color: blue;
+    border-color: blue;
+}
+
+.chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: black;
+}
+
+.panel
+{
+    margin-right: 5px;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: black;
+}
+
+.panel-body
+{
+    overflow-y: scroll;
+    height: 500px;
+}
